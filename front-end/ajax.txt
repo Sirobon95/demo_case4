@@ -1,0 +1,16 @@
+function render() {
+    let token = getToken()
+    $.ajax({
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: token
+        },
+        type: "GET",
+        url: "http://localhost:8080/crud-offer/offer-name",
+        success: function (data) {
+            form(data.cities, data.careers, data.skills)
+        }
+
+    })
+}
